@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+<body background="Wallpaper_01.jpg"/>
+<font color = "#ea75c5"><h2>--Form Pemesanan Berbasis Java Script--</h2>
+<form name="pemesanan" action="#">
+<table border = "1px">
+<font color = "#ee36a2">
+<tr>
+<th width="20px">No</th>
+<th width="200px">Makanan/Minuman</th>
+<th width="100px">Harga</th>
+<th width="100px">Pesan</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Bakso Istimewa</td>
+<td>@<input type="text" name="bakso" value="12000" size="6" readonly></td>
+<td><input type="text" name="hargaBakso" value="0" onchange="hitungPesan()">
+</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Soto Spesial</td>
+<td>@<input type="text" name="soto" value="10000" size="6" readonly></td>
+<td><input type="text" name="hargaSoto" value="0" onchange="hitungPesan()">
+</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Mie Ayam Super</td>
+<td>@<input type="text" name="mie" value="15000" size="6" readonly></td>
+<td><input type="text" name="hargaMie" value="0" onchange="hitungPesan()">
+</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Es Degan</td>
+<td>@<input type="text" name="degan" value="5000" size="6" readonly></td>
+<td><input type="text" name="hargaDegan" value="0" onchange="hitungPesan()">
+</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Es Campur</td>
+<td>@<input type="text" name="campur" value="7000" size="6" readonly></td>
+<td><input type="text" name="hargaCampur" value="0" onchange="hitungPesan()">
+</td>
+</tr>
+
+<tr>
+<td colspan="3" align="right">Jumlah Total</td>
+<td><input type="text" name="Total" readonly="true">
+</td>
+</tr>
+
+<tr>
+<td colspan="3" align="right">Diskon</td>
+<td><input type="text" name="Diskon" readonly="true">
+</td>
+</tr>
+
+<tr>
+<td colspan="3" align="right">Jumlah Dibayar</td>
+<td><input type="text" name="Bayar" readonly="true" align="right">
+</td>
+</tr>
+</table>
+<br><input type="button" value="BATAL" onMouseUp="resetForm()">
+</form>
+<script language="JavaScript" type="text/javascript">
+<!--
+function hitungPesan(){
+var nota = document.pemesanan;
+var jumlahBakso = 12000 * parseInt(nota.hargaBakso.value);
+var jumlahSoto = 10000 * parseInt(nota.hargaSoto.value);
+var jumlahMie = 15000 * parseInt(nota.hargaMie.value);
+var jumlahDegan = 5000 * parseInt(nota.hargaDegan.value);
+var jumlahCampur = 7000 * parseInt(nota.hargaCampur.value);
+var jumlahTotal = jumlahBakso + jumlahSoto + jumlahMie + jumlahDegan + jumlahCampur;
+if (jumlahTotal > 50000)
+{
+nota.Total.value = jumlahTotal;
+nota.Diskon.value = 10000;
+nota.Bayar.value = jumlahTotal - 10000;
+}
+else{
+nota.Total.value = jumlahTotal;
+nota.Diskon.value = 0;
+nota.Bayar.value = jumlahTotal;
+}
+}
+function resetForm(){
+document.pemesanan.reset();
+}
+//->
+</script>
+<br>
+<br><font align="center" face="Broadway" size="3" >&reg Suastika Yulia Riska-109533414510 </font>
+<br><font align="center" face="Brush Script MT" size = "5">-The Learning University of Malang-</font>
+</body>
+</html>
